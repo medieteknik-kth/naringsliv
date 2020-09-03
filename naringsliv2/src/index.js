@@ -4,7 +4,7 @@ import App from "./App";
 import Home from "./Components/Home/home";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<Home />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 //<React.StrictMode>
 //<App />
 //</React.StrictMode>,

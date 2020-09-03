@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Components/Home/home";
+import TestView from "./Components/TestView/testview"
 import NotFound from "./Components/NotFound/notFound";
 import "./App.css";
 
-class App extends Component {
-  render() {
+function App() {
     return (
       <div className="App">
+      <Router>
+      <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/test" component={TestView} />
         {/*<header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -25,9 +28,10 @@ class App extends Component {
         </header>*/}
         <Route match="*" component={NotFound} />
         {/*/notfound */}
+        </Switch>
+        </Router>
       </div>
     );
   }
-}
 
 export default App;
