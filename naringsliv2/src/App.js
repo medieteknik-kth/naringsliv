@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Components/Home/home";
+import NotFound from "./Components/NotFound/notFound";
 import "./App.css";
 
 class App extends Component {
-  return() {
+  render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <Route exact path="/" component={Home} />
+        {/*<header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -19,7 +22,9 @@ class App extends Component {
           >
             Learn React
           </a>
-        </header>
+        </header>*/}
+        <Route match="*" component={NotFound} />
+        {/*/notfound */}
       </div>
     );
   }
